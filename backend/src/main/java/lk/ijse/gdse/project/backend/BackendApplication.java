@@ -17,14 +17,4 @@ public class BackendApplication {
 		SpringApplication.run(BackendApplication.class, args);
 	}
 
-	@Bean
-	public WebMvcConfigurer corsConfigurer() {
-		return new WebMvcConfigurer() {
-			@Override
-			public void addCorsMappings(CorsRegistry registry) {
-				// Allow requests from React frontend
-				registry.addMapping("/**").allowedOrigins("http://localhost:3000");
-			}
-		};
-	}
 }
